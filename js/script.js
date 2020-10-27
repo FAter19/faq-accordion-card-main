@@ -11,8 +11,8 @@ $(document).ready(function () {
             var title = element.title;
         	var body = element.body;
 
-            if (title.length >11) {
-                title = title.substring(0,11);
+            if (body.length >60) {
+                body = body.substring(0,60);
             }
 
 
@@ -30,26 +30,27 @@ $(document).ready(function () {
             $('#table').append(output);
             
         }
-    });
-
-
-
-    // Helps to display the body section of the FAQ
-    $('.accordion-question').click( function () {
         
-        $('.accordion-answer').toggleClass('none');
 
-            var img = $(this).children('img');
-        $('img').not(img).removeClass('rotate');
-        img.toggleClass('rotate');
+        // Helps to display the body section of the FAQ
+        $('.accordion-question').on('click', function () {
+            $(this).next().slideToggle('500')
+                .siblings('.none').toggle();
+
+                var img = $(this).children('div img');
+                    $('div img').not(img).removeClass('rotate');
+                    img.toggleClass('rotate');
+         
+        });
+
+        $('.accordion-question').click(function(){
+            $(this).css('font-weight','600');  
+        });
+
+
+
 
     });
-
-    $('.accordion-question').click(function(){
-        $(this).css('font-weight','600');
-    });
-
-
   
 });
 

@@ -76,6 +76,7 @@ li{
     justify-content:space-between;
     align-content : center;
     padding-bottom: 1rem;
+    
 }
     .headline {
 
@@ -86,6 +87,7 @@ li{
     }
 .accordion-answer {
     padding-top: 1rem;
+    font-size: 1.2rem;
 }
 
 .none {
